@@ -22,11 +22,7 @@ class MainActivity : AppCompatActivity() {
         val parser = XMLParser()
         val progressD = ProgressDialog(this@MainActivity)
 
-        override fun onPreExecute() {
-            super.onPreExecute()
-            progressD.setMessage("Please Wait")
-            progressD.show()
-        }
+      
 
         override fun doInBackground(vararg params: Void?): MutableList<Question> {
             val url = URL("https://stackoverflow.com/feeds")
