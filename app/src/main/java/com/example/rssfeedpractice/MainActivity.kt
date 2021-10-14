@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     private inner class FetchQuestions : AsyncTask<Void, Void, MutableList<Question>>() {
         val parser = XMLParser()
-        val progressD = ProgressDialog(this@MainActivity)
 
       
 
@@ -34,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
         override fun onPostExecute(result: MutableList<Question>?) {
             super.onPostExecute(result)
-            progressD.dismiss()
             rv.adapter = RVAdap(result)
             rv.layoutManager = LinearLayoutManager(applicationContext)
         }
